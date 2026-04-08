@@ -26,7 +26,24 @@ void UEngine::Init()
 	//MyRender = SDL_CreateRenderer(MyWindow, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_SOFTWARE);
 
 	Mix_Init(MIX_INIT_MP3);
-	int Success = Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096); // CD음질, 뭐사용할지, 채널(단방향, 양방향), 4kb)
+
+	char* Device = nullptr;
+	int Frequency = 0;
+	Uint16 Format = 0;
+	int Chaanels = 0;
+	int Result = Mix_OpenAudioDevice(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT,
+		MIX_DEFAULT_CHANNELS,4096, Device, SDL_AUDIO_ALLOW_ANY_CHANGE);
+
+	Result = Mix_QuerySpec(&Frequency, &Format, &Chaanels); // 지리 사운드 카드를 찾아줌. 1이면 있음.
+	if (Result == 1)
+	{
+		int Success = Mix_OpenAudio(Frequency, Format, Chaanels, 4096); // CD음질, 뭐사용할지, 채널(단방향, 양방향), 4kb)
+		if (Success == -1)
+		{
+			SDL_Log("Sound Card Error!!");
+		}
+	}
+
 
 	TTF_Init();
 	Font = TTF_OpenFont("./Data/font.ttf", 32); // 몇 픽셀로 텍스처를 만들 것인지
