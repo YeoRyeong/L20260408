@@ -88,6 +88,8 @@ public:
 		return ResourceManager;
 	}
 
+	TTF_Font* Font;
+
 protected:
 	void Input();
 	void Tick();

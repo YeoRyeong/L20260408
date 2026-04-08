@@ -113,8 +113,8 @@
     </Link>
     <PostBuildEvent>
       <Command>copy $(SolutionDir)SDL2\lib\x64\SDL2.dll $(OutputPath)SDL2.dll
-copy $(SolutionDir)SDL2_ttf\lib\x64\*.dll $(OutputPath)\.
-copy $(SolutionDir)SDL2_mixer\lib\x64\*.dll $(OutputPath)\.</Command>
+copy $(SolutionDir)SDL2_ttf\lib\x64\*.dll $(OutputPath).
+copy $(SolutionDir)SDL2_mixer\lib\x64\*.dll $(OutputPath).</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,9 +148,11 @@ copy $(SolutionDir)SDL2_mixer\lib\x64\*.dll $(OutputPath)\.</Command>
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="SpriteAnimationComponent.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
-    <ClCompile Include="TextRender.cpp" />
+    <ClCompile Include="TextRenderActor.cpp" />
+    <ClCompile Include="TextRenderComponent.h.cpp" />
     <ClCompile Include="Wall.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="YoudieActor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -169,9 +171,11 @@ copy $(SolutionDir)SDL2_mixer\lib\x64\*.dll $(OutputPath)\.</Command>
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SpriteAnimationComponent.h" />
     <ClInclude Include="SpriteComponent.h" />
-    <ClInclude Include="TextRender.h" />
+    <ClInclude Include="TextRenderActor.h" />
+    <ClInclude Include="TextRenderComponent.h" />
     <ClInclude Include="Wall.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="YoudieActor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

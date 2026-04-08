@@ -26,6 +26,7 @@ void UEngine::Init()
 	//MyRender = SDL_CreateRenderer(MyWindow, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_SOFTWARE);
 
 	TTF_Init();
+	TTF_OpenFont("./Data/font.ttf", 32); // 몇 픽셀로 텍스처를 만들 것인지
 
 	ResourceManager = new UResourceManager();
 
@@ -38,6 +39,12 @@ void UEngine::Init()
 
 void UEngine::Term()
 {
+	// 리소스 매니저로 바꾸면 됨..
+	if (Font) 
+	{
+		TTF_CloseFont(Font);
+	}
+
 	TTF_Quit();
 	SDL_DestroyRenderer(MyRenderer);
 	SDL_DestroyWindow(MyWindow);

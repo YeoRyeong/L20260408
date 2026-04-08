@@ -69,7 +69,13 @@
     <ClCompile Include="MyGM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextRender.cpp">
+    <ClCompile Include="TextRenderComponent.h.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRenderActor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="YoudieActor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -128,7 +134,13 @@
     <ClInclude Include="MyGM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TextRender.h">
+    <ClInclude Include="TextRenderComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="YoudieActor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
