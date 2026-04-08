@@ -2,11 +2,11 @@
 #include "Component.h"
 #include "RenderableComponent.h"
 
-class UTextRender : public UComponent, public IRenderableComponent
+class UTextRenderComponent : public UComponent, public IRenderableComponent
 {
 public:
-	UTextRender();
-	virtual ~UTextRender();
+	UTextRenderComponent();
+	virtual ~UTextRenderComponent();
 
 	virtual void BeginPlay() override;
 
