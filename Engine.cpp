@@ -25,8 +25,10 @@ void UEngine::Init()
 	MyRenderer = SDL_CreateRenderer(MyWindow, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
 	//MyRender = SDL_CreateRenderer(MyWindow, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_SOFTWARE);
 
+	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096); // CD음질, 뭐사용할지, 채널(단방향, 양방향), 4kb)
+
 	TTF_Init();
-	TTF_OpenFont("./Data/font.ttf", 32); // 몇 픽셀로 텍스처를 만들 것인지
+	Font = TTF_OpenFont("./Data/font.ttf", 32); // 몇 픽셀로 텍스처를 만들 것인지
 
 	ResourceManager = new UResourceManager();
 
@@ -44,6 +46,8 @@ void UEngine::Term()
 	{
 		TTF_CloseFont(Font);
 	}
+
+	Mix_CloseAudio(); 
 
 	TTF_Quit();
 	SDL_DestroyRenderer(MyRenderer);
