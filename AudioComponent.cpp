@@ -3,6 +3,7 @@
 
 UAudioComponent::UAudioComponent()
 {
+
 }
 
 UAudioComponent::~UAudioComponent()
