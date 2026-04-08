@@ -15,5 +15,6 @@ ABGActor::~ABGActor()
 void ABGActor::BeginPlay()
 {
 	__super::BeginPlay();
+
 	Audio->Play();
 }

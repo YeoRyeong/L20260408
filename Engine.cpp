@@ -25,7 +25,8 @@ void UEngine::Init()
 	MyRenderer = SDL_CreateRenderer(MyWindow, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
 	//MyRender = SDL_CreateRenderer(MyWindow, -1, SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_SOFTWARE);
 
-	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096); // CD음질, 뭐사용할지, 채널(단방향, 양방향), 4kb)
+	Mix_Init(MIX_INIT_MP3);
+	int Success = Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 4096); // CD음질, 뭐사용할지, 채널(단방향, 양방향), 4kb)
 
 	TTF_Init();
 	Font = TTF_OpenFont("./Data/font.ttf", 32); // 몇 픽셀로 텍스처를 만들 것인지
@@ -37,6 +38,7 @@ void UEngine::Init()
 	InitBuffer();
 
 	World = new UWorld();
+
 }
 
 void UEngine::Term()

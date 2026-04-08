@@ -4,8 +4,8 @@
 #include <string>
 
 // 전방선언
-class SDL_Surface;
-class SDL_Texture;
+struct SDL_Surface;
+struct SDL_Texture;
 
 class UTextRenderComponent : public UComponent, public IRenderableComponent
 {

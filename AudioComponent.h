@@ -23,6 +23,7 @@ public:
 
 protected:
 	std::string Filename;
+
 	Mix_Music* Music;
 };
 

@@ -3,7 +3,6 @@
 
 UAudioComponent::UAudioComponent()
 {
-
 }
 
 UAudioComponent::~UAudioComponent()
@@ -12,6 +11,7 @@ UAudioComponent::~UAudioComponent()
 	{
 		Mix_FreeMusic(Music);
 	}
+
 }
 
 void UAudioComponent::BeginPlay()
@@ -36,5 +36,6 @@ void UAudioComponent::Stop()
 void UAudioComponent::Load(std::string InFilename)
 {
 	Filename = InFilename;
+
 	Music = Mix_LoadMUS(Filename.c_str());
 }
